@@ -1,0 +1,37 @@
+html {
+  font-size: 14px;
+}
+
+@media (min-width: 768px) {
+  html {
+    font-size: 16px;
+  }
+}
+
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+body {
+  margin-bottom: 60px;
+}
+
+.textArea{
+    height:200px;
+}
+
+.tamCol{
+    width:650px;
+}
+
+.field-validation-error{
+    color: red;
+    margin-top:5px;
+}
+
+.img-home{
+    height:400px;
+    width:400px;
+    border-radius:50%;
+}
