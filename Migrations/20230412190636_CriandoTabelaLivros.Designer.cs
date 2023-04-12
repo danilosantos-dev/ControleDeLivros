@@ -10,7 +10,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace ListaDeLivros.Migrations
 {
     [DbContext(typeof(DataContext))]
-    [Migration("20230410021020_CriandoTabelaLivros")]
+    [Migration("20230412190636_CriandoTabelaLivros")]
     partial class CriandoTabelaLivros
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -27,13 +27,19 @@ namespace ListaDeLivros.Migrations
                         .HasColumnType("int");
 
                     b.Property<string>("Descricao")
-                        .HasColumnType("longtext");
+                        .IsRequired()
+                        .HasMaxLength(250)
+                        .HasColumnType("varchar(250)");
 
                     b.Property<string>("NomeAutor")
-                        .HasColumnType("longtext");
+                        .IsRequired()
+                        .HasMaxLength(30)
+                        .HasColumnType("varchar(30)");
 
                     b.Property<string>("NomeLivro")
-                        .HasColumnType("longtext");
+                        .IsRequired()
+                        .HasMaxLength(40)
+                        .HasColumnType("varchar(40)");
 
                     b.HasKey("Id");
 
