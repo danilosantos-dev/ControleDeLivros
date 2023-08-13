@@ -1,0 +1,11 @@
+Abrir gerenciador de pacotes do NuGet: 
+
+Ferramentas >> Gerenciador de Pacotes Nuget >> Console Geren. Pacotes
+
+Criando migração:
+
+Add-Migration  NomeDaMigração -Context NomeDoContexto
+
+Atualizando Migração: 
+
+Update-Database -Context NomeDoContexto

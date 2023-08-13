@@ -1,0 +1,54 @@
+﻿@using ListaDeLivros.Enums;
+@model UsuarioModel
+@{
+    ViewData["Title"] = "Adicionar Usuario";
+}
+
+
+<a role="button" class="btn btn-primary mb-4 " asp-controller="Livro" asp-action="Index">Voltar</a>
+
+<div class="text-center">
+    <h1 class="display-4 mb-4">Cadastrar Usuario</h1>
+</div>
+
+
+<form asp-controller="Usuario" asp-action="Criar" method="post">
+
+    <div class="form-group mb-2">
+        <label>Nome</label>
+        <input type="text" asp-for="Nome" class="form-control" placeholder="Nome do Usuario">
+        <span asp-validation-for="Nome" class="field-validation-error"></span>
+    </div>
+
+    <div class="form-group mb-2">
+        <label>Email</label>
+        <input type="text" asp-for="Email" class="form-control" placeholder="Email do Usuario">
+        <span asp-validation-for="Email" class="field-validation-error"></span>
+    </div>
+
+    <div class="form-group mb-2">
+        <label>Login</label>
+        <input type="text" asp-for="Login" class="form-control" placeholder="Login do Usuario">
+        <span asp-validation-for="Login" class="field-validation-error"></span>
+    </div>
+
+    <div class="form-group mb-2">
+        <label>Perfil</label>
+        <!-- <input type="text" asp-for="Perfil" class="form-control" placeholder="Tipo de Perfil">-->
+        <select asp-for="Perfil" class="form-control">
+            <option value="0">Selecione</option>
+            <option value="@PerfilEnum.Admin">Adminstrador</option>
+            <option value="@PerfilEnum.Padrao">Padrão</option>
+        </select>
+        <span asp-validation-for="Perfil" class="field-validation-error"></span>
+    </div>
+
+    <div class="form-group mb-2">
+        <label>Senha</label>
+        <input type="password" asp-for="Senha" class="form-control" placeholder="Digite sua senha">
+        <span asp-validation-for="Senha" class="field-validation-error"></span>
+    </div>
+
+    <button type="submit" class="btn btn-primary">Cadastrar</button>
+
+</form>

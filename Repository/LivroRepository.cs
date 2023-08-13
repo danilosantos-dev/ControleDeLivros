@@ -49,7 +49,7 @@ namespace ListaDeLivros.Repository
             LivroModel livroDb = BuscarPorId(id);
             if (livroDb == null)
             {
-                throw new Exception("Houve um erro na atualização do livro.");
+                throw new Exception("Houve um erro ao deletar o livro.");
             }
             _dataContext.Livros.Remove(livroDb);
             _dataContext.SaveChanges();

@@ -3,6 +3,11 @@
 
 // Write your JavaScript code.
 
+
+let table = new DataTable('table.display');
+
+
+
 $(document).ready(function () {
 	setTimeout(function () {
 		$(".alert").fadeOut("slow", function () {

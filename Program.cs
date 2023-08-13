@@ -14,7 +14,9 @@ namespace ListaDeLivros
             var conn = builder.Configuration.GetConnectionString("DefaultConnection");
 
             builder.Services.AddDbContext<DataContext>(op => op.UseMySql(conn, ServerVersion.AutoDetect(conn)));
+
             builder.Services.AddScoped<ILivroRepository, LivroRepository>();
+            builder.Services.AddScoped<IUsuarioRepository, UsuarioRepository>();
 
             builder.Services.AddControllersWithViews();
 
